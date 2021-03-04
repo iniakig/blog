@@ -1,0 +1,65 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.header {
+
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/677/302/small/abstract-technology-banner-background.jpg
+    );
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 10px;
+    height: 200px;
+        
+        ul {
+
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            li {
+                margin-right: 30px;
+                font-size: 1.3rem;
+                
+                &:hover {
+                    color: grey;
+                    cursor: pointer;
+                }
+            }
+        }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 10%;
+
+}
+
+.news {
+    margin: 40px;
+    display: flex;
+    box-shadow: 3px 3px 55px 0px rgba(0,0,0,0.75);
+    img{
+        width: 300px;
+    }
+    
+}
+
+.news-header {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.news-body {
+    padding: 20px;
+}
+
+.news-readmore {
+    padding: 10px;
+}
