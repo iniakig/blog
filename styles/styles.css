@@ -1,3 +1,21 @@
+.info-new-header p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.info-new-header img {
+  width: 40%;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.info-new-body p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -7,16 +25,25 @@
 }
 
 .header {
-  background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/677/302/small/abstract-technology-banner-background.jpg);
+  position: relative;
+  background-color: #505050;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: white;
   padding: 10px;
-  height: 200px;
+  height: 100px;
+  z-index: 1;
+}
+
+.header h1 {
+  margin-left: 10px;
 }
 
 .header ul {
@@ -29,14 +56,68 @@
           align-items: center;
 }
 
+@media (max-width: 1023px) {
+  .header ul {
+    background-color: #6a6a6a;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    position: absolute;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    height: auto;
+    max-height: 0;
+    -webkit-transition: max-height 0.15s ease-out;
+    transition: max-height 0.15s ease-out;
+    top: 100px;
+    overflow: hidden;
+    z-index: -1;
+    left: 0;
+  }
+}
+
 .header ul li {
   margin-right: 30px;
   font-size: 1.3rem;
 }
 
+@media (max-width: 1023px) {
+  .header ul li {
+    padding: 10px;
+  }
+}
+
 .header ul li:hover {
   color: grey;
   cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 30px;
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .menu-icon {
+    display: inline-block;
+  }
+}
+
+#menu {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  #menu:checked ~ .menu {
+    max-height: 300px;
+    -webkit-transition: max-height 0.25s ease-in;
+    transition: max-height 0.25s ease-in;
+  }
 }
 
 .container {
@@ -59,8 +140,28 @@
           box-shadow: 3px 3px 55px 0px rgba(0, 0, 0, 0.75);
 }
 
+@media (max-width: 1023px) {
+  .news {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .news img {
   width: 300px;
+}
+
+@media (max-width: 1023px) {
+  .news img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
 }
 
 .news-header {
@@ -75,5 +176,6 @@
 
 .news-readmore {
   padding: 10px;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=styles.css.map */
