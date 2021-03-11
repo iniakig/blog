@@ -16,6 +16,41 @@
   margin-bottom: 20px;
 }
 
+.grid-container {
+  margin: 50px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70px (1fr)[4];
+  -ms-grid-columns: 70% 1fr;
+      grid-template: 70px repeat(4, 1fr)/70% 1fr;
+  grid-gap: 15px;
+}
+
+.relleno {
+  background-color: #d8d8d8;
+  padding: 20px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 2 / 6 / 3;
+}
+
+.card {
+  padding: 10px;
+}
+
+.card-header {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.card-body {
+  font-size: 1.3rem;
+  height: 20px;
+  word-wrap: break-word;
+}
+
 * {
   margin: 0px;
   padding: 0px;
