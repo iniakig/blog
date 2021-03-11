@@ -1,65 +1,123 @@
+@import "./media-queries";
+@import "./new-description";
+@import "./grid";
+
 * {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    list-style: none;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	list-style: none;
 }
 
 .header {
+	position: relative;
+	background-color: #505050;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	padding: 10px;
+	height: 100px;
+	z-index: 1;
 
-    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/000/677/302/small/abstract-technology-banner-background.jpg
-    );
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    padding: 10px;
-    height: 200px;
-        
-        ul {
+	h1 {
+		margin-left: 10px;
+	}
 
-            height: 100%;
-            display: flex;
-            align-items: center;
+	ul {
+		height: 100%;
+		display: flex;
+		align-items: center;
 
-            li {
-                margin-right: 30px;
-                font-size: 1.3rem;
-                
-                &:hover {
-                    color: grey;
-                    cursor: pointer;
-                }
-            }
-        }
+		@include media(md) {
+			background-color: #6a6a6a;
+			flex-direction: column;
+			align-items: flex-end;
+			position: absolute;
+			width: 100%;
+			box-sizing: border-box;
+			height: auto;
+			max-height: 0;
+			transition: max-height 0.15s ease-out;
+			top: 100px;
+			overflow: hidden;
+			z-index: -1;
+			left: 0;
+		}
+
+		li {
+			margin-right: 30px;
+			font-size: 1.3rem;
+
+			@include media(md) {
+				padding: 10px;
+			}
+
+			&:hover {
+				color: grey;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.menu-icon {
+	font-size: 30px;
+	display: none;
+
+	@include media(md) {
+		display: inline-block;
+	}
+}
+
+#menu {
+	display: none;
+
+	@include media(md) {
+		&:checked ~ .menu {
+			max-height: 300px;
+			transition: max-height 0.25s ease-in;
+		}
+	}
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    padding: 5% 10%;
-
+	display: flex;
+	flex-direction: column;
+	padding: 5% 10%;
 }
 
 .news {
-    margin: 40px;
-    display: flex;
-    box-shadow: 3px 3px 55px 0px rgba(0,0,0,0.75);
-    img{
-        width: 300px;
-    }
-    
+	margin: 40px;
+	display: flex;
+	box-shadow: 3px 3px 55px 0px rgba(0, 0, 0, 0.75);
+
+	@include media(md) {
+		flex-direction: column;
+	}
+
+	img {
+		width: 300px;
+
+		@include media(md) {
+			width: 100%;
+			object-fit: cover;
+			order: -1;
+		}
+	}
 }
 
 .news-header {
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 20px;
+	font-size: 2rem;
+	font-weight: bold;
+	padding: 20px;
 }
 
 .news-body {
-    padding: 20px;
+	padding: 20px;
 }
 
 .news-readmore {
-    padding: 10px;
+	padding: 10px;
+	margin-bottom: 10px;
 }
